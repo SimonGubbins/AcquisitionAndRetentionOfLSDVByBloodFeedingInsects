@@ -1,0 +1,134 @@
+######################################################################
+# OpenBUGS script to implement models for acquisition and retention of
+# LSDV by blood feeding insects
+#
+# This version is for four insect species
+######################################################################
+
+# Set some intial things
+modelDisplay('log')
+modelPrecision(6)
+
+## MODEL 1
+# Initialise the model
+modelCheck('model1_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 2
+# Initialise the model
+modelCheck('model2_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 3
+# Initialise the model
+modelCheck('model3_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 4
+# Initialise the model
+modelCheck('model4_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 5
+# Initialise the model
+modelCheck('model5_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 6
+# Initialise the model
+modelCheck('model6_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 7
+# Initialise the model
+modelCheck('model7_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 8
+# Initialise the model
+modelCheck('model8_FourSpp.txt')
+modelData('ProcessedInsectData_FourSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## Save the outputs
+modelSaveLog('modelDIC_FourSpp.odc')
+

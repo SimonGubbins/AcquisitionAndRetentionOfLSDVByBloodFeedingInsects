@@ -1,0 +1,134 @@
+######################################################################
+# OpenBUGS script to implement models for acquisition and retention of
+# LSDV by blood feeding insects
+#
+# This version is for three insect species
+######################################################################
+
+# Set some intial things
+modelDisplay('log')
+modelPrecision(6)
+
+## MODEL 1
+# Initialise the model
+modelCheck('model1_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 2
+# Initialise the model
+modelCheck('model2_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 3
+# Initialise the model
+modelCheck('model3_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 4
+# Initialise the model
+modelCheck('model4_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 5
+# Initialise the model
+modelCheck('model5_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 6
+# Initialise the model
+modelCheck('model6_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 7
+# Initialise the model
+modelCheck('model7_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## MODEL 8
+# Initialise the model
+modelCheck('model8_ThreeSpp.txt')
+modelData('ProcessedInsectData_ThreeSpp.txt')
+modelCompile(2)
+modelGenInits()
+
+# Run the model
+modelUpdate(20000)
+dicSet()
+modelUpdate(100000)
+
+# Store the outputs
+dicStats()
+
+## Save the outputs
+modelSaveLog('modelDIC_ThreeSpp.odc')
+

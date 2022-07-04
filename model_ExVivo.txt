@@ -1,0 +1,52 @@
+model{
+
+# For each observation ...
+  for(j in 1:nObs){
+
+# Probability of aquisition
+#    logit(pA[j])<-a+b[Y[j,2]]
+    logit(pA[j])<-a+c[Y[j,3]]
+#    logit(pA[j])<-a+b[Y[j,2]]+c[Y[j,3]]
+
+# Probability of retention
+#    pR[j]<-exp(-g*Y[j,4])
+    pR[j]<-exp(-g[Y[j,2]]*Y[j,4])
+
+# Probability of being positive
+    pPos[j]<-pA[j]*pR[j]
+
+# Likelihood
+    Y[j,5]~dbern(pPos[j])
+
+  }
+
+# Prior for intercept
+  a~dnorm(0,0.01)
+
+## Priors for probability of acquisition
+## Insect part (1-proboscis, 2-head/thorax, 3-abdomen)
+#  b[1]<-0
+#  b[2]~dnorm(0,0.01)
+#  b[3]~dnorm(0,0.01)
+
+## Ex vivo feeding only
+## Source (1-lesion, 2-blood, high viraemia, 3-blood, low viraemia)
+#  c[1]<-0
+#  c[2]~dnorm(0,0.01)
+#  c[3]~dnorm(0,0.01)
+
+# Ex vivo and on animal feeding
+# Source (1-lesion, 2-blood/virus, high titre, 3-blood/virus low titre,
+# 4-normal skin on calf, 5-lesion on calf, 6-viraemic blood from calf)
+  c[1]<-0
+  for(k in 2:6){
+    c[k]~dnorm(0,0.01)
+  }
+
+# Priors for decay rate (varies by insect part)
+#  g~dexp(0.01)
+  for(k in 1:3){
+    g[k]~dexp(0.01)
+  }
+
+}
